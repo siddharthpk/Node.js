@@ -1,10 +1,5 @@
-// const name1 = require('./utils.js')
-// const add = require('./utils.js')
-// const sum = add(4,-2)
-// const name = 'Sid'
+const validator = require('validator')
 
-// console.log(sum)
+console.log(validator.isEmail('siddharthpk@gmail.com'))
 
-const str = require('./notes.js')
-
-console.log(str)
+console.log(validator.isURL('https://siddharthpk.me'))
