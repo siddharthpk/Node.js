@@ -6,7 +6,7 @@
 
 const chalk = require('chalk')
 
-console.log(chalk.green('Success'))
+console.log(chalk.blue('Error'))
 console.log(chalk.bold.green('Success'))
 console.log(chalk.bold.red('Success'))
 console.log(chalk.bgRed('Success'))
