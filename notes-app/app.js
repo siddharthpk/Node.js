@@ -1,29 +1,20 @@
-//const validator = require('validator')
-
-//console.log(validator.isEmail('siddharthpk@gmail.com'))
-
-//console.log(validator.isURL('https://siddharthpk.me'))
-
-// const chalk = require('chalk')
-
-// console.log(chalk.blue('Error'))
-// console.log(chalk.bold.green('Success'))
-// console.log(chalk.bold.red('Success'))
-// console.log(chalk.bgRed('Success'))
-
 //Importing notes.js & chalk npm package
 const getNotes = require('./notes.js')
 const chalk = require('chalk')
 
-// Priting value returned from notes.js
-console.log(getNotes())
+// Take input of the 3rd argv variable from cmd line
+const cmd = process.argv[2]
 
-// Priting sucess in greem usig chalk 
-const msg = chalk.green('Success!')
-console.log(msg)
-
-//Takes in the cmd line args
+//Printing the entire array (For Testing)
 console.log(process.argv)
 
-//Prints 3rd variable in the array argv
-console.log(process.argv[2])
+
+// Condition to check if users wants to add a new note
+if(cmd === 'add'){
+    console.log('Adding note!')
+}
+
+// Condition to check if users wants to remove a new note
+else if(cmd === 'remove'){
+    console.log('Removing note!')
+}
