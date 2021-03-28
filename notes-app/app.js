@@ -18,10 +18,15 @@ yargs.command({
             describe: 'Note title',     // same as command
             demandOption: true,         // Makes option input required
             type: 'string'              // defines type of the option 
+        },
+        body: {
+            describe: 'Note title',     
+            demandOption: true,        
+            type: 'string'
         }
     },
     handler: function (argv){       // A placeholder function to execute the desired functionality
-        console.log('Title: ' + argv.title)
+        console.log('Title: ' + argv.title + '\nBody: '+ argv.body)
     }
 })
 
