@@ -10,9 +10,9 @@ yargs.version('1.1.0')
 
 // Add note
 yargs.command({
-    command : 'add',
-    describe: 'Adds a new note',
-    handler: function (){
+    command : 'add',                // name of the command
+    describe: 'Adds a new note',    // Description of the command
+    handler: function (){           // A placeholder function to execute the desired functionality
         console.log('Adding a new note')
     }
 })
