@@ -1,7 +1,9 @@
 //File system library import
 const fs = require('fs')
+//const { fstat } = require('node:fs')
 
 /*
+***File writing***
 // JS Object 
 const book = {
     title :'Ego is the Enemy',
@@ -20,6 +22,9 @@ console.log(parsedData.author)
 fs.writeFileSync('1-json.json', bookJSON)
 */
 
+
+/*
+***File Read***
 //Reading a file from filesystem
 const dataBuffer = fs.readFileSync('1-json.json')
 
@@ -27,3 +32,19 @@ const dataBuffer = fs.readFileSync('1-json.json')
 const dataJSON = dataBuffer.toString()
 const data = JSON.parse(dataJSON)
 console.log(data.title)
+*/
+
+//Challenge
+//File read and parse
+const dataBuffer = fs.readFileSync('1-json.json')
+const data = JSON.parse(dataBuffer.toString())
+
+//Changing name and age
+data.name = "Sid"
+data.age = 23
+console.log(data)
+
+//Stringfying and overwriting to file
+const dataStringify = JSON.stringify(data)
+fs.writeFileSync('1-json.json', dataStringify)
+
