@@ -7,16 +7,35 @@ const getNotes = () => {
 //Add Note feature
 const addNote = (title,body) =>{
     //Load file to add note from
-    const note = loadNotes()
-    
-    //Using push feature of an array to add data to the note array
-    note.push({
-        title:title,
-        body: body
+    const notes = loadNotes()
+
+    //Catching duplicates
+    const duplicateNotes = notes.filter((note)=>{
+        return note.title === title
     })
 
-    //Save the note into the file
-    saveNotes(note)
+    if(duplicateNotes.length===0){
+        //Using push feature of an array to add data to the note array
+        notes.push({
+         title:title,
+         body: body
+        })
+
+        //Save the note into the file
+        saveNotes(notes)
+        console.log("New Note Added!")
+    }else{
+        console.log("Note title taken!")
+    }
+
+    // //Using push feature of an array to add data to the note array
+    // notes.push({
+    //     title:title,
+    //     body: body
+    // })
+
+    // //Save the note into the file
+    // saveNotes(notes)
 }
 
 //Save note feature
