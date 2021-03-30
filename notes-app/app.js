@@ -20,7 +20,7 @@ yargs.command({
             type: 'string'              // defines type of the option 
         },
         body: {
-            describe: 'Note title',     
+            describe: 'Note body',     
             demandOption: true,        
             type: 'string'
         }
@@ -30,12 +30,20 @@ yargs.command({
     }
 })
 
+//Challenge: Add removeNote feature
 // Remove note
 yargs.command({
     command : 'remove',
     describe: 'Removes a note',
-    handler: function (){
-        console.log('Removing a note')
+    builder: {                          //Added builder to have objects options 
+        title: {                        //Added title option in the remove cmd
+            describe: 'Note Title',
+            demandOption: true,         //Title mandatory
+            type: 'string'
+        }
+    },
+    handler: function (argv){
+        notes.removeNote(argv.title)
     }
 })
 

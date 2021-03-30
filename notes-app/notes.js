@@ -38,6 +38,27 @@ const addNote = (title,body) =>{
     // saveNotes(notes)
 }
 
+//Challenge: Add removeNote feature
+//Remove Note feature
+const removeNote = (title)=>{
+    const notes = loadNotes()
+    
+    const titleToRemove = notes.filter((note)=>{
+        if(note.title === title){
+            
+            notes.pop({
+                title:title
+            }) 
+        }
+        
+        return  title
+    })
+    console.log(title)
+    saveNotes(notes)
+
+   
+}
+
 //Save note feature
 const saveNotes = (notes)=>{
     //Writing to the file after stringyfying
@@ -65,5 +86,6 @@ const loadNotes = () =>{
 //Exporting only objects
 module.exports = {
     getNotes: getNotes,
-    addNote: addNote
+    addNote: addNote,
+    removeNote: removeNote
 }
