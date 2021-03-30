@@ -1,5 +1,5 @@
 //Importing notes.js & chalk npm package
-const getNotes = require('./notes.js')
+const notes = require('./notes.js')
 const chalk = require('chalk')
 
 //Import yargs package
@@ -26,7 +26,7 @@ yargs.command({
         }
     },
     handler: function (argv){       // A placeholder function to execute the desired functionality
-        console.log('Title: ' + argv.title + '\nBody: '+ argv.body)
+        notes.addNote(argv.title, argv.body) //Revised to retreive title and body from notes.js
     }
 })
 
