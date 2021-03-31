@@ -24,9 +24,9 @@ const addNote = (title,body) =>{
 
         //Save the note into the file
         saveNotes(notes)
-        console.log("New Note Added!")
+        console.log(chalk.green.inverse("New Note Added!"))
     }else{
-        console.log("Note title taken!")
+        console.log(chalk.red.inverse("Note title taken!"))
     }
 
     // //Using push feature of an array to add data to the note array
