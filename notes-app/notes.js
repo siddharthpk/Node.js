@@ -1,4 +1,5 @@
 const fs = require('fs')
+const chalk = require('chalk')
 
 const getNotes = () => {
     return "Your notes..."
@@ -41,22 +42,22 @@ const addNote = (title,body) =>{
 //Challenge: Add removeNote feature
 //Remove Note feature
 const removeNote = (title)=>{
+    //Load notes
     const notes = loadNotes()
     
-    const titleToRemove = notes.filter((note)=>{
-        if(note.title === title){
-            
-            notes.pop({
-                title:title
-            }) 
-        }
-        
-        return  title
+    //Use filter array feature to save notes that we want to keep
+    const notesToKeep = notes.filter((note)=>{
+        return note.title !== title
     })
-    console.log(title)
-    saveNotes(notes)
 
-   
+    //Check if length of new array < length of array loaded in line 46
+    if(notesToKeep.length<notes.length){
+        console.log(chalk.green.inverse("Note Removed!"))
+        //Save notes to the json file
+        saveNotes(notesToKeep)
+    }else{
+        console.log(chalk.red.inverse("No Note Found!"))
+    }
 }
 
 //Save note feature
