@@ -47,7 +47,7 @@ yargs.command({
     }
 })
 
-// List
+// List command
 yargs.command({
     command : 'list',
     describe: 'Lists all notes',
@@ -56,7 +56,7 @@ yargs.command({
     }
 })
 
-// Read
+// Read command
 yargs.command({
     command : 'read',
     describe: 'Read a note',
