@@ -11,9 +11,13 @@ const addNote = (title,body) =>{
     const notes = loadNotes()
 
     //Catching duplicates
-    const duplicateNotes = notes.filter((note)=>{
-        return note.title === title
-    })
+    //ES6 
+    const duplicateNotes = notes.filter((note)=>note.title === title)
+
+    //ES5
+    // const duplicateNotes = notes.filter((note)=>{
+    //     return note.title === title
+    // })
 
     if(duplicateNotes.length===0){
         //Using push feature of an array to add data to the note array
@@ -46,9 +50,13 @@ const removeNote = (title)=>{
     const notes = loadNotes()
     
     //Use filter array feature to save notes that we want to keep
-    const notesToKeep = notes.filter((note)=>{
-        return note.title !== title
-    })
+    //ES6
+    const notesToKeep = notes.filter((note)=>note.title !== title)
+
+    //ES5
+    // const notesToKeep = notes.filter((note)=>{
+    //     return note.title !== title
+    // })
 
     //Check if length of new array < length of array loaded in line 46
     if(notesToKeep.length<notes.length){
