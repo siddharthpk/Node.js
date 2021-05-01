@@ -16,8 +16,13 @@ console.log(square1(4))
 
 const event = {
     name: "D-day",
-    printGuestList: function(){
-        console.log("Guest list for D-days")
+    guestList: ['Sid', 'Kim', 'Dip'],
+    printGuestList (){ //Note : ES6 arrow func don't bind their own this value, use below syntax for func instead
+        console.log('Guest list for ' + this.name)
+
+        this.guestList.forEach((guest) =>{  //Note: ES6 arrow func can access this values of function they are created in 
+            console.log(guest + ' is attending ' + this.name)
+        })
     }
 }
 
