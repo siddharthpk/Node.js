@@ -20,6 +20,13 @@ const addNote = (title,body) =>{
     //     return note.title === title
     // })
 
+    //****************** DEBUGGING *******************/
+
+    console.log(duplicateNote)
+    console.log(title)
+
+
+
     // if(duplicateNotes.length===0){
     if(!duplicateNote){
         //Using push feature of an array to add data to the note array
