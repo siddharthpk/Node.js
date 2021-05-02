@@ -121,6 +121,7 @@ const saveNotes = (notes)=>{
     //Writing to the file after stringyfying
     const dataJSON = JSON.stringify(notes)
     fs.writeFileSync('notes.json',dataJSON)
+    //fs.writeFileSync('notes.json',dataJsON)
 }
 
 //Load note feature
