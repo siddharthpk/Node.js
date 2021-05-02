@@ -86,15 +86,20 @@ const listNotes = () =>{
 }
 
 //Read Notes feature
-const readNotes= () =>{
+const readNotes= (title) =>{
     const notes = loadNotes()
-    if(notes.length === 0) return console.log(chalk.red.inverse("No Note Found!"))
+    if(notes.length === 0) return console.log(chalk.red.inverse("No Note Stored!"))
 
     else{
-        console.log(chalk.blue("Your notes"))
-        notes.forEach((note)=>{
-            console.log("Title: " + note.title + ", Body: " + note.body)
-        })
+        const existNote = notes.find((note => note.title === title))
+        if(existNote){
+            console.log(chalk.green("Title: "+ existNote.title) + " Body: " + existNote.body)
+        }
+
+        else{
+            console.log(chalk.red("No Note Found with Title: ") + title)
+        }
+        
     }
 
 }
