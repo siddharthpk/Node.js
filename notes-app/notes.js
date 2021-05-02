@@ -1,5 +1,6 @@
 const fs = require('fs')
 const chalk = require('chalk')
+const { debug } = require('console')
 
 const getNotes = () => {
     return "Your notes..."
@@ -22,9 +23,13 @@ const addNote = (title,body) =>{
 
     //****************** DEBUGGING *******************/
 
-    console.log(duplicateNote)
-    console.log(title)
+    // console.log(duplicateNote)
+    // console.log(title)
 
+    debugger
+
+
+    //****************** END *******************/
 
 
     // if(duplicateNotes.length===0){
