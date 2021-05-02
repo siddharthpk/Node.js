@@ -58,7 +58,7 @@ const removeNote = (title)=>{
     //     return note.title !== title
     // })
 
-    //Check if length of new array < length of array loaded in line 46
+    //Check if length of new array < length of array loaded in line 50
     if(notesToKeep.length<notes.length){
         console.log(chalk.green.inverse("Note Removed!"))
         //Save notes to the json file
@@ -68,6 +68,20 @@ const removeNote = (title)=>{
     }
 }
 
+//Challenge: List Note feature
+//List Note
+const listNotes = () =>{
+    const notes = loadNotes()
+    if(notes.length === 0) return console.log(chalk.red.inverse("No Note Found!"))
+
+    else{
+        console.log(chalk.blue("Your notes"))
+        notes.forEach((note)=>{
+            console.log("Title: " + note.title + ", Body: " + note.body)
+        })
+    }
+
+}
 //Save note feature
 const saveNotes = (notes)=>{
     //Writing to the file after stringyfying
@@ -96,5 +110,6 @@ const loadNotes = () =>{
 module.exports = {
     getNotes: getNotes,
     addNote: addNote,
-    removeNote: removeNote
+    removeNote: removeNote,
+    listNotes: listNotes
 }

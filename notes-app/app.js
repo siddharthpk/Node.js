@@ -52,7 +52,7 @@ yargs.command({
     command : 'list',
     describe: 'Lists all notes',
     handler(){
-        console.log('Listing all notes')
+        notes.listNotes()
     }
 })
 
