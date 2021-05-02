@@ -12,14 +12,16 @@ const addNote = (title,body) =>{
 
     //Catching duplicates
     //ES6 
-    const duplicateNotes = notes.filter((note)=>note.title === title)
+    const duplicateNotes = notes.filter((note)=>note.title === title)  // filter doesn't stop at the index it finds the condition true, instead it goes through the entire array regardless.
+    const duplicateNote = notes.find((note => note.title === title)) // find is an alternative more suitable for 
 
     //ES5
     // const duplicateNotes = notes.filter((note)=>{
     //     return note.title === title
     // })
 
-    if(duplicateNotes.length===0){
+    // if(duplicateNotes.length===0){
+    if(!duplicateNote){
         //Using push feature of an array to add data to the note array
         notes.push({
          title:title,
@@ -82,6 +84,21 @@ const listNotes = () =>{
     }
 
 }
+
+//Read Notes feature
+const readNotes= () =>{
+    const notes = loadNotes()
+    if(notes.length === 0) return console.log(chalk.red.inverse("No Note Found!"))
+
+    else{
+        console.log(chalk.blue("Your notes"))
+        notes.forEach((note)=>{
+            console.log("Title: " + note.title + ", Body: " + note.body)
+        })
+    }
+
+}
+
 //Save note feature
 const saveNotes = (notes)=>{
     //Writing to the file after stringyfying
@@ -111,5 +128,6 @@ module.exports = {
     getNotes: getNotes,
     addNote: addNote,
     removeNote: removeNote,
-    listNotes: listNotes
+    listNotes: listNotes,
+    readNotes: readNotes
 }
