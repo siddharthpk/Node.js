@@ -1,2 +1,4 @@
-# Node.js
+# Note taking application 
+
+Built using Node.js
  
