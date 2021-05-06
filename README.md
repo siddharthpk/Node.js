@@ -12,4 +12,11 @@ This repo demonstrates the code I wrote to develop a Node.js based Note Taking A
  - Debugging using Chrome Dev Tools
 
 
- 
+## Features Implemented
+ - Note Addition
+ - Note Deletion
+ - Note Listing
+ - Note Reading
+ - Note Updating
+
+## 
